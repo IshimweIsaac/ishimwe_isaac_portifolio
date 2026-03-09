@@ -116,6 +116,180 @@
         </div>
     </main>
 
+    <!-- Projects Section (Slides over hero) -->
+    <section id="projects" class="projects-section">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <p style="color: var(--text-muted); font-size: 1.1rem; max-width: 600px; line-height: 1.6;">
+                Here are some of my recent works. This section slides gracefully over the hero area as you scroll down,
+                creating a seamlessly layered page effect.
+            </p>
+
+            <div class="projects-grid">
+                <!-- Project 1: Urukari -->
+                <div class="project-card fade-in">
+                    <div class="project-image">
+                        <img src="urukari.png" alt="Urukari Chatbot OS">
+                    </div>
+                    <div class="project-info">
+                        <div class="project-menu-container">
+                            <button class="project-menu-btn" aria-label="Project Options"
+                                onclick="toggleProjectMenu(this)">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z" />
+                                </svg>
+                            </button>
+                            <div class="project-dropdown">
+                                <button class="dropdown-item"
+                                    onclick="alert('Project Description: A modern, intuitive Chatbot OS...')">Project
+                                    Description</button>
+                                <button class="dropdown-item"
+                                    onclick="navigator.clipboard.writeText('https://urukari.web.app').then(() => alert('Project link copied to clipboard!'))">Share
+                                    Project</button>
+                                <a href="https://github.com/bodyempire/ishimwe_isaac_portifolio" target="_blank"
+                                    class="dropdown-item">Read Source Code</a>
+                            </div>
+                        </div>
+
+                        <h3 class="project-title">Urukari: Chatbot OS</h3>
+                        <p class="project-desc">
+                            A modern, intuitive Chatbot Operating System allowing users to seamlessly interact with AI.
+                            Features a clean interface with chat history, an app ecosystem context, and comprehensive
+                            community tools.
+                        </p>
+                        <div class="tech-stack" style="margin-bottom: 24px;">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">TailwindCSS</span>
+                            <span class="tech-tag">AI / LLMs</span>
+                        </div>
+
+                        <a href="https://urukari.web.app" class="btn btn-light-blue"
+                            style="width: 100%; text-align: center; display: block;">Checkout Platform</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills & About Section -->
+    <section id="skills" class="skills-section">
+        <div class="container reveal">
+            <h2 class="section-title">Engaging Systems</h2>
+
+            <div class="about-grid">
+                <!-- Left Column: Mock IDE Window -->
+                <div class="ide-window reveal-delay-1">
+                    <div class="ide-header">
+                        <div class="ide-controls">
+                            <span class="control close"></span>
+                            <span class="control minimize"></span>
+                            <span class="control maximize"></span>
+                        </div>
+                        <div id="ide-title" class="ide-title">ishimwe_isaac — bash — 80x24</div>
+                    </div>
+                    <div id="ide-content-container" class="ide-content" style="min-height: 380px;">
+                        <!-- Content dynamically injected by main.js typed animation -->
+                        <div class="ide-prompt"><span class="prompt-arrow">➜</span> <span class="prompt-dir">~</span>
+                            <span class="blink-cursor">_</span></div>
+                    </div>
+
+                    <div class="connect-links" style="margin-top: 30px; padding: 0 20px 20px;">
+                        <a href="https://www.linkedin.com/in/ishimwe-isaac-6062b421a/" target="_blank"
+                            class="connect-badge float-anim-1">
+                            <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"
+                                alt="LinkedIn">
+                        </a>
+                        <a href="mailto:ishimweisaac123@gmail.com" class="connect-badge float-anim-2">
+                            <img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white"
+                                alt="Email">
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Column: Interactive Tech Stack Tabs -->
+                <div class="skills-interactive reveal-delay-2">
+                    <div class="skills-tabs">
+                        <button class="tab-btn active" onclick="openTab(event, 'languages')">Languages</button>
+                        <button class="tab-btn" onclick="openTab(event, 'backend')">Backend</button>
+                        <button class="tab-btn" onclick="openTab(event, 'frontend')">Frontend</button>
+                        <button class="tab-btn" onclick="openTab(event, 'database')">Database</button>
+                        <button class="tab-btn" onclick="openTab(event, 'ai')">AI/ML</button>
+                    </div>
+
+                    <div class="tab-container">
+                        <!-- Languages Tab -->
+                        <div id="languages" class="tab-content active">
+                            <div class="skill-badges-large">
+                                <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"
+                                    alt="JavaScript" class="float-anim-1">
+                                <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white"
+                                    alt="TypeScript" class="float-anim-2">
+                                <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white"
+                                    alt="Python" class="float-anim-3">
+                            </div>
+                        </div>
+
+                        <!-- Backend Tab -->
+                        <div id="backend" class="tab-content">
+                            <div class="skill-badges-large">
+                                <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white"
+                                    alt="Node.js" class="float-anim-1">
+                                <img src="https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white"
+                                    alt="Django" class="float-anim-2">
+                                <img src="https://img.shields.io/badge/REST_API-02569B?style=for-the-badge&logo=google-cloud&logoColor=white"
+                                    alt="REST API" class="float-anim-3">
+                            </div>
+                        </div>
+
+                        <!-- Frontend Tab -->
+                        <div id="frontend" class="tab-content">
+                            <div class="skill-badges-large">
+                                <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB"
+                                    alt="React" class="float-anim-1">
+                                <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white"
+                                    alt="Tailwind CSS" class="float-anim-2">
+                                <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white"
+                                    alt="HTML5" class="float-anim-3">
+                                <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white"
+                                    alt="CSS3" class="float-anim-4">
+                            </div>
+                        </div>
+
+                        <!-- Database Tab -->
+                        <div id="database" class="tab-content">
+                            <div class="skill-badges-large">
+                                <img src="https://img.shields.io/badge/MySQL-005C84?style=for-the-badge&logo=mysql&logoColor=white"
+                                    alt="MySQL" class="float-anim-1">
+                                <img src="https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white"
+                                    alt="MongoDB" class="float-anim-2">
+                                <img src="https://img.shields.io/badge/PL/SQL-F80000?style=for-the-badge&logo=oracle&logoColor=white"
+                                    alt="PL/SQL" class="float-anim-3">
+                            </div>
+                        </div>
+
+                        <!-- AI/ML Tab -->
+                        <div id="ai" class="tab-content">
+                            <div class="skill-badges-large">
+                                <img src="https://img.shields.io/badge/LLM_Training-FF6F00?style=for-the-badge&logo=google-cloud&logoColor=white"
+                                    alt="LLM Training" class="float-anim-1">
+                                <img src="https://img.shields.io/badge/Fine--Tuning-326CE5?style=for-the-badge&logo=huggingface&logoColor=white"
+                                    alt="Fine-Tuning" class="float-anim-2">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="github-stats-container reveal-delay-3" style="margin-top: 40px;">
+                        <h4 class="category-title mb-3">GitHub Stats</h4>
+                        <img src="https://github-readme-streak-stats.herokuapp.com/?user=bodyempire&theme=tokyonight&hide_border=true"
+                            alt="GitHub Streak" class="github-stats-interactive">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <footer class="footer">
         <div class="footer-icon">
             <img src="data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 0L24.5 15.5H40L27.5 25L32 40L20 30.5L8 40L12.5 25L0 15.5H15.5L20 0Z' fill='white'/%3E%3C/svg%3E"

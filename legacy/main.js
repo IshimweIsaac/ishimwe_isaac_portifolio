@@ -261,6 +261,28 @@ document.addEventListener('DOMContentLoaded', () => {
     }, revealOptions);
 
     revealElements.forEach(el => revealObserver.observe(el));
+
+    // ── Tab Auto-Cycling Logic ─────────────────────────
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    if (tabBtns.length > 0) {
+        let currentTabIndex = 0;
+        let tabCycleInterval;
+
+        const cycleTabs = () => {
+            currentTabIndex = (currentTabIndex + 1) % tabBtns.length;
+            tabBtns[currentTabIndex].click();
+        };
+
+        // Start cycling
+        tabCycleInterval = setInterval(cycleTabs, 4000);
+
+        // Optional: stop auto-cycling if user manually interacts with tabs
+        document.querySelector('.skills-tabs').addEventListener('click', (e) => {
+            if (e.isTrusted) { // Only clear if it was an actual user click
+                clearInterval(tabCycleInterval);
+            }
+        });
+    }
 });
 
 // Global function to toggle project menus
@@ -300,7 +322,13 @@ window.openTab = function (evt, tabName) {
 
     // Show the current tab, and add an "active" class to the button that opened the tab
     document.getElementById(tabName).classList.add("active");
-    evt.currentTarget.classList.add("active");
+
+    // Only add active to the target if evt exists (might be called programmatically)
+    if (evt && evt.currentTarget) {
+        evt.currentTarget.classList.add("active");
+    } else if (evt && evt.target) {
+        evt.target.classList.add("active");
+    }
 };
 
 // ── IDE Typing Animation ──────────────────────
